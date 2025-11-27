@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPrevisao.Views.HistoricoView"
+             Title="Histórico de Consultas">
+
+    <Grid RowDefinitions="Auto, *" Padding="10">
+        <Frame Grid.Row="0" Padding="10" Margin="0,0,0,10">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Filtrar por Data" FontAttributes="Bold"/>
+                <Grid ColumnDefinitions="*,*,Auto">
+                    <DatePicker Grid.Column="0" x:Name="dtpInicio"/>
+                    <DatePicker Grid.Column="1" x:Name="dtpFim"/>
+                    <Button Grid.Column="2" Text="OK" Clicked="BtnFiltrar_Clicked" HeightRequest="40"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <CollectionView Grid.Row="1" x:Name="collectionHistorico">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Cidade}" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="{Binding ResultadoPrevisao}" TextColor="Gray"/>
+                            <Label Text="{Binding DataConsulta, StringFormat='{0:dd/MM/yyyy HH:mm}'}" 
+                                   HorizontalOptions="End" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
