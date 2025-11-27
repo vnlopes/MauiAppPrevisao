@@ -30,7 +30,7 @@ public partial class PrevisaoView : ContentPage
 
             HistoricoConsulta consulta = new HistoricoConsulta
             {
-                UsuarioId = App.UsuarioLogado.Id, // NOVO: Salva o ID do dono
+                UsuarioId = App.UsuarioLogado.Id,
                 Cidade = cidade,
                 DataConsulta = DateTime.Now,
                 ResultadoPrevisao = resultado

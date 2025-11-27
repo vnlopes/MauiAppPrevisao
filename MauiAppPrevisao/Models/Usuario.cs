@@ -13,7 +13,6 @@ namespace MauiAppPrevisao.Models
         public string Email { get; set; }
         public string Senha { get; set; }
 
-        // Validação solicitada na Model
         public bool Validar(out string mensagemErro)
         {
             mensagemErro = string.Empty;

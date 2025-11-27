@@ -18,7 +18,6 @@ public partial class LoginView : ContentPage
 
         if (usuario != null)
         {
-            // NOVO: Salva quem logou na memória do App
             App.UsuarioLogado = usuario;
 
             Application.Current.MainPage = new NavigationPage(new PrevisaoView());

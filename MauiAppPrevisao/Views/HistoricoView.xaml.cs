@@ -19,7 +19,6 @@ public partial class HistoricoView : ContentPage
 
     private void CarregarDados()
     {
-        // NOVO: Passa o ID do usuário logado (App.UsuarioLogado.Id)
         var lista = DatabaseService.Instance.FiltrarHistorico(
             App.UsuarioLogado.Id,
             dtpInicio.Date,

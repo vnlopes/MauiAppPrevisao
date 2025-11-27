@@ -8,7 +8,6 @@ namespace MauiAppPrevisao.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        // NOVO: Vincula a consulta ao usuário que fez
         public int UsuarioId { get; set; }
 
         public string Cidade { get; set; }
